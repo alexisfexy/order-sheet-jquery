@@ -23,15 +23,36 @@ $(function () {
 
 
     // var i = $('.newInput').size() + 1;
-    var i = 0;
+    var i = 1;
     $("#wordAdd").click(function () {
 
         var newWord = `
         <div class="form-group">
-        <label for="wordText">Word:</label>
+        <hr class ="class-2">
+        <h5><label for="wordText">Word #` + i +`</label></h5>
+        <button type="button" class="btn btn-sm btn-outline-danger remove">Remove</button>
         <input type="text" style="text-transform:uppercase" class="form-control" id="wordText" placeholder="HAPPY">
-        <button type="button" class="btn btn-sm btn-outline-danger remove">Remove</button>'
-        </div>`
+        </div>
+
+
+        <div class="form-group">
+        <label>Color Sequence: </label> <br>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="colorPatterns" id="monoPattern" value="mono">
+          <label class="form-check-label" for="monoPattern">Monochrome</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="colorPatters" id="alterPattern" value="altern">
+          <label class="form-check-label" for="alterPattern">Alternating</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" onclick="breakdownWord()" type="radio" name="colorPatterns" id="iconPattern"
+            value="custom">
+          <label class="form-check-label" for="iconPattern">Custom</label>
+        </div>
+      </div>
+
+        `
         
         $(newWord).fadeIn("slow").appendTo("#wordExtender");
         i++;

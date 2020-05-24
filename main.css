@@ -7,3 +7,11 @@
     height: 10rem;
 
 }
+
+hr.class-2 { 
+    border-top: 3px double #8c8b8b; 
+}
+
+.word-header{
+    background-color: #8c8b8b;
+}

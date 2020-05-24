@@ -12,8 +12,8 @@
 </head>
 
 <body>
-  <div class='container'>
-    <form class="p-3">
+  <div class='container-fluid'>
+    <form class="p-2">
       <div class="form-group">
         <label>New Sign Type: </label> <br>
         <div class="form-check form-check-inline">
@@ -108,29 +108,61 @@
         <!-- ADD CUSTOM COLORING -->
 
     </form>
+  </div>
 
-       <!-- Dynamic Form -->
-
-    <form action="" method="post">
-      <fieldset>
-        <legend>Words</legend>
-        <div id="wordExtender"></div>
-        <!-- <a id='wordAdd' href='#'>Add Word</a> -->
-        <button id="wordAdd" type="button" class="btn btn-outline-secondary">Add Word</button>
-      </fieldset>
-      <fieldset>
-        <legend>Symbols</legend>
-        <div id="symExtender"></div>
-        <button id="symAdd" type="button" class="btn btn-outline-secondary">Add Symbol</button>
-      </fieldset>
-      <fieldset>
-        <legend>Icons</legend>
-        <div id="iconExtender"></div>
-        <button id="iconAdd" type="button" class="btn btn-outline-secondary">Add Icon</button>
-      </fieldset>
-    </form>
+  <!-- Dynamic Form -->
 
 
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-header">New Order</div>
+      <div class="card-body">
+        <form action="" method="post">
+          <div class='row'>
+            <div class="col-sm-12 col-md-12 col-lg-4">
+              <div class="card">
+                <div class="card-body">
+                    <h3>Words</h3>
+                  <div id="wordExtender"></div>
+                  <!-- <a id='wordAdd' href='#'>Add Word</a> -->
+                  <button id="wordAdd" type="button" class="btn btn-outline-primary">Add Word</button>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-4">
+              <div class="card">
+                <div class="card-body">
+                  <h3>Symbols</h3>
+                  <div id="symExtender"></div>
+                  <!-- <a id='symAdd' href='#'>Add Word</a> -->
+                  <button id="symAdd" type="button" class="btn btn-outline-primary">Add Symbol</button>
+                </div>
+              </div>
+
+
+
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-4">
+              <div class="card">
+                <div class="card-body">
+                  <h3>Icons</h3>
+                  <div id="iconExtender"></div>
+                  <!-- <a id='iconAdd' href='#'>Add Word</a> -->
+                  <button id="iconAdd" type="button" class="btn btn-outline-primary">Add Icon</button>
+                </div>
+              </div>
+
+
+
+
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
 </body>
 <!-- <?!= include('Javascript'); ?> -->
 <script src='googlesheet.js'></script>
