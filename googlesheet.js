@@ -22,6 +22,48 @@ $(function () {
     });
 
 
+    // var i = $('.newInput').size() + 1;
+    var i = 0;
+    $("#wordAdd").click(function () {
+
+        var newWord = `
+        <div class="form-group">
+        <label for="wordText">Word:</label>
+        <input type="text" style="text-transform:uppercase" class="form-control" id="wordText" placeholder="HAPPY">
+        <button type="button" class="btn btn-sm btn-outline-danger remove">Remove</button>'
+        </div>`
+        
+        $(newWord).fadeIn("slow").appendTo("#wordExtender");
+        i++;
+        return false;
+    });
+
+    /// remove function
+    $('.remove').live('click', function () {
+        $(this).parent().fadeOut(300, function () {
+            $(this).empty();
+            return false;
+        });
+    });
+
+
+
+    // dynamic form:
+
+
+
+    // $('#wordAdd').click(function(event) { alert('inner') });
+    //     var newWord = '<input id="' + i + '" type="text" name="items[]" value="' + i + '" /><a class="remove" href="#">Remove</a>';
+    //     alert(newWord);
+    //     // $(newWord).fadeIn("slow").appendTo("#wordExtender");
+    //     // i++;
+    //     // return false;
+
+
+
+    // }
+
+
 
 });
 
