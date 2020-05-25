@@ -34,11 +34,7 @@
         <label for="wordText">Word:</label>
         <input type="text" style="text-transform:uppercase" class="form-control" id="wordText" placeholder="HAPPY">
       </div>
-      <!-- figure out casing, 
-              currently: just visually uppercase, need to make it so input is transformed too
-              check box for lower case? 
-            https://www.the-art-of-web.com/html/input-field-uppercase/
-      -->
+
 
       <div class="form-group">
         <label>Color Sequence: </label> <br>
@@ -87,7 +83,6 @@
             <option value="#101457">Navy</option>
           </select>
         </div>
-
         <!-- add a validation that it is NOT the same as other column -->
         <div class="form-group col-md-6">
           <label for="color2input">Color Two:</label>
@@ -103,12 +98,74 @@
             <option value="#101457">Navy</option>
           </select>
         </div>
-
-
         <!-- ADD CUSTOM COLORING -->
+      </div>
+
 
     </form>
   </div>
+
+
+
+  <!-- Mess Around Here -->
+
+
+
+
+  <div class="container">
+    <div class="card">
+      <div class="card-body">
+        <div class="form-group">
+          <h5>Word #` + i +`</h5>
+          <button type="button" class="btn btn-outline-danger remove" id='remove-button'>Remove</button>
+          <label for="wordText">Text:</label>
+          <input type="text" style="text-transform:uppercase" class="form-control" id="wordText" placeholder="HAPPY">
+        </div>
+
+        <div class="form-group">
+          <label>Color Sequence: </label> <br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="colorPatterns" id="monoPattern" value="mono">
+            <label class="form-check-label" for="monoPattern">Monochrome</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="colorPatters" id="alterPattern" value="altern">
+            <label class="form-check-label" for="alterPattern">Alternating</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" onclick="breakdownWord()" type="radio" name="colorPatterns" id="iconPattern"
+              value="custom">
+            <label class="form-check-label" for="iconPattern">Custom</label>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <!-- Dynamic Form -->
 
@@ -118,49 +175,84 @@
       <div class="card-header">New Order</div>
       <div class="card-body">
         <form action="" method="post">
-          <div class='row'>
-            <div class="col-sm-12 col-md-12 col-lg-4">
-              <div class="card">
-                <div class="card-body">
-                    <h3>Words</h3>
-                  <div id="wordExtender"></div>
-                  <!-- <a id='wordAdd' href='#'>Add Word</a> -->
-                  <button id="wordAdd" type="button" class="btn btn-outline-primary">Add Word</button>
+          <div class='row all-customer-info'>
+            <div class='col'>
+              <!--basic information -->
+              <div class="form-group">
+                <label for="customerName">Customer Name:</label>
+                <input type="text" class="form-control" id="customerName" placeholder="John Smith">
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-10">
+                  <label for="inputAddress">Address:</label>
+                  <input type="text" class="form-control" placeholder="1234 Main Street City, ST">
+                </div>
+                <div class="form-group col-md-2">
+                  <label for="inputZip">Zip</label>
+                  <input type="text" class="form-control" id="inputZip" placeholder="10101">
                 </div>
               </div>
 
-            </div>
-            <div class="col-sm-12 col-md-12 col-lg-4">
-              <div class="card">
-                <div class="card-body">
-                  <h3>Symbols</h3>
-                  <div id="symExtender"></div>
-                  <!-- <a id='symAdd' href='#'>Add Word</a> -->
-                  <button id="symAdd" type="button" class="btn btn-outline-primary">Add Symbol</button>
-                </div>
+              <div class="form-group mb-3">
+                <label for="customerNote">Customer Note:</label>
+                <textarea class="form-control" id="customNote" placeholder="Place to right of garage."></textarea>
               </div>
-
-
-
-            </div>
-            <div class="col-sm-12 col-md-12 col-lg-4">
-              <div class="card">
-                <div class="card-body">
-                  <h3>Icons</h3>
-                  <div id="iconExtender"></div>
-                  <!-- <a id='iconAdd' href='#'>Add Word</a> -->
-                  <button id="iconAdd" type="button" class="btn btn-outline-primary">Add Icon</button>
-                </div>
-              </div>
-
-
-
 
             </div>
           </div>
-        </form>
+
+
+
+
+
+
+
+
+      </div> <!-- end basic information -->
+      <div class='row'>
+        <div class="col-sm-12 col-md-12 col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="text-center">Words</h3>
+              <div id="wordExtender"></div>
+              <!-- <a id='wordAdd' href='#'>Add Word</a> -->
+              <button id="wordAdd" type="button" class="btn btn-block btn-outline-primary">Add Word</button>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="text-center">Symbols</h3>
+              <div id="symExtender"></div>
+              <!-- <a id='symAdd' href='#'>Add Word</a> -->
+              <button id="symAdd" type="button" class="btn btn-block btn-outline-primary">Add Symbol</button>
+            </div>
+          </div>
+
+
+
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="text-center">Icons</h3>
+              <div id="iconExtender"></div>
+              <!-- <a id='iconAdd' href='#'>Add Word</a> -->
+              <button id="iconAdd" type="button" class="btn btn-block btn-outline-primary">Add Icon</button>
+            </div>
+          </div>
+
+
+
+
+        </div>
       </div>
+      </form>
     </div>
+  </div>
   </div>
   </div>
 </body>

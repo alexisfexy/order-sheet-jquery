@@ -14,4 +14,12 @@ hr.class-2 {
 
 .word-header{
     background-color: #8c8b8b;
+
+    
+}
+
+#remove-button {
+    position:absolute;
+    top:1em;
+    right: 1em;
 }

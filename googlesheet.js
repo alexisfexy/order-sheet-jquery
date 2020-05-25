@@ -27,33 +27,38 @@ $(function () {
     $("#wordAdd").click(function () {
 
         var newWord = `
+        <div class="container">
+    <div class="card">
+      <div class="card-body">
         <div class="form-group">
-        <hr class ="class-2">
-        <h5><label for="wordText">Word #` + i +`</label></h5>
-        <button type="button" class="btn btn-sm btn-outline-danger remove">Remove</button>
-        <input type="text" style="text-transform:uppercase" class="form-control" id="wordText" placeholder="HAPPY">
+          <h5>Word #` + i +`</h5>
+          <button type="button" class="btn btn-outline-danger remove" id='remove-button'>Remove</button>
+          <label for="wordText">Text:</label>
+          <input type="text" style="text-transform:uppercase" class="form-control" id="wordText" placeholder="HAPPY">
         </div>
 
-
         <div class="form-group">
-        <label>Color Sequence: </label> <br>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="colorPatterns" id="monoPattern" value="mono">
-          <label class="form-check-label" for="monoPattern">Monochrome</label>
+          <label>Color Sequence: </label> <br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="colorPatterns" id="monoPattern" value="mono">
+            <label class="form-check-label" for="monoPattern">Monochrome</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="colorPatters" id="alterPattern" value="altern">
+            <label class="form-check-label" for="alterPattern">Alternating</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" onclick="breakdownWord()" type="radio" name="colorPatterns" id="iconPattern"
+              value="custom">
+            <label class="form-check-label" for="iconPattern">Custom</label>
+          </div>
         </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="colorPatters" id="alterPattern" value="altern">
-          <label class="form-check-label" for="alterPattern">Alternating</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" onclick="breakdownWord()" type="radio" name="colorPatterns" id="iconPattern"
-            value="custom">
-          <label class="form-check-label" for="iconPattern">Custom</label>
-        </div>
+
       </div>
-
+    </div>
+  </div>
         `
-        
+
         $(newWord).fadeIn("slow").appendTo("#wordExtender");
         i++;
         return false;
